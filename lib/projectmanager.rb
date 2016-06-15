@@ -1,6 +1,7 @@
 require 'hanami/model'
 require 'hanami/mailer'
-Dir["#{ __dir__ }/projectmanager/**/*.rb"].each { |file| require_relative file }
+Dir["#{__dir__}/support/**/*.rb"].each { |file| require_relative file }
+Dir["#{__dir__}/projectmanager/**/*.rb"].each { |file| require_relative file }
 
 Hanami::Model.configure do
   ##
@@ -31,23 +32,23 @@ Hanami::Model.configure do
   #
   # You can specify mapping file to load with:
   #
-  # mapping "#{__dir__}/config/mapping"
+  mapping "#{__dir__}/config/mapping"
   #
   # Alternatively, you can use a block syntax like the following:
   #
-  mapping do
-    # collection :users do
-    #   entity     User
-    #   repository UserRepository
-    #
-    #   attribute :id,   Integer
-    #   attribute :name, String
-    # end
-  end
+  # mapping do
+  # collection :users do
+  #   entity     User
+  #   repository UserRepository
+  #
+  #   attribute :id,   Integer
+  #   attribute :name, String
+  # end
+  # end
 end.load!
 
 Hanami::Mailer.configure do
-  root "#{ __dir__ }/projectmanager/mailers"
+  root "#{__dir__}/projectmanager/mailers"
 
   # See http://hanamirb.org/guides/mailers/delivery
   delivery do
