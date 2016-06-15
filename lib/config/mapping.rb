@@ -1,7 +1,7 @@
-# collection :users do
-#   entity     User
-#   repository UserRepository
-#
-#   attribute :id,   Integer
-#   attribute :name, String
-# end
+collection :roles do
+  entity     Role
+  repository RoleRepository
+
+  attribute :id,   String
+  attribute :name, String
+end

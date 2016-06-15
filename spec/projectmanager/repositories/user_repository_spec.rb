@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe UserRepository do
-  # place your tests here
+  before do
+    clear_repositories
+  end
 end
